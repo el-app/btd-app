@@ -1,1 +1,106 @@
-<p>contact works!</p>
+<section class="contact-container">
+    <h2>Besoin d'un conseil ?<br>D'une réponse à une question ?<br>N'attendez plus et contactez-nous !</h2>
+    <span class="subtitle"></span>
+    <div id="contact-container">
+        <form autocomplete="on" novalidate class="contact-form" (ngSubmit)="contactValidate()">
+            <div class="contact-form-content">
+                <table class="contact-full-width">
+                    <tr>
+                        <td>
+                            <div class="form-item form-type-textfield form-item-lastname">
+                                <label for="edit-lastname">Nom <span class="form-required">*</span></label>
+                                <input required="required" formControlName="lastname" data-validation-label="Nom" maxlength="128" data-cs-mask="" type="text" id="edit-lastname" name="lastname" value="" size="60" class="form-text required">
+                                <div *ngIf="hasError('lastname', 'required')">
+                                    <span class="sr-only">Erreur: </span>Veuillez entrer votre <strong>nom</strong> SVP
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-item form-type-textfield form-item-firstname">
+                                <label for="edit-firstname">Prénom <span class="form-required">*</span></label>
+                                <input required="required" formControlName="firstname" data-validation-label="Prénom" maxlength="128" data-cs-mask="" type="text" id="edit-firstname" name="firstname" value="" size="60" class="form-text required">
+                                <div *ngIf="hasError('firstname', 'required')">
+                                    <span class="sr-only">Erreur: </span>Veuillez entrer votre <strong>prénom</strong> SVP
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <fieldset class="container-fieldset">
+                    <div class="form-item form-type-emailfield form-item-email validation-error">
+                        <label for="edit-email">E-mail <span class="form-required">*</span></label>
+                        <input required="required" formControlName="email" data-validation-label="E-mail" pattern=".+@.+\..+" placeholder="" data-cs-mask="" type="email" id="edit-email" name="email" value="" size="60" maxlength="128" class="form-text form-email required" aria-describedby="email-form-error">
+                        <div id="email-form-error" class="error-email clearfix error-message" aria-hidden="false">
+                            <div *ngIf="hasError('email', 'email')">
+                                <span class="sr-only">Erreur: </span>Veuillez entrer une adresse email valide (ex: institutbeautedivine@outlook.com)
+                            </div>
+                            <div *ngIf="hasError('email', 'required')">
+                                <span class="sr-only">Erreur: </span>Votre adresse email est <strong>requise</strong>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-item form-type-telfield form-item-telephone">
+                    <label for="edit-telephone">Numéro de téléphone <span class="form-required">*</span></label>
+                    <input maxlength="32" required="required" formControlName="telephone" data-validation-label="Numéro de téléphone" pattern="^[0-9+\\ ]+" placeholder="" data-cs-mask="" type="tel" id="edit-telephone" name="telephone" value="" size="20" class="form-text form-tel required">
+                </div>
+
+                <div class="form-item form-type-textarea form-item-message-text">
+                    <label for="edit-message-text">Votre message <span class="form-required">*</span></label>
+                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea validation-error">
+                        <textarea required="required" data-validation-label="Message" data-cs-mask="" id="edit-message-text" name="message-text" cols="60" rows="5" class="form-textarea required" aria-describedby="message-form-error"></textarea>
+                        <div class="grippie"></div>
+                        <div id="message-form-error" class="error-message_text clearfix error-message" aria-hidden="false">
+                            <div *ngIf="hasError('message','required')">
+                                <span class="sr-only">Erreur: </span>Un message est <strong>requis</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>* Vos nom, prénom, email et message sont requis pour nous envoyer un message.</p>
+                <div class="submit contact-full-width">
+                    <button mat-button type="submit">Envoyer</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="contact-content">
+            <div class="content-info">
+                <div class="address contact-full-width">
+                    <span class="icon">settings_accessibility</span>
+                    <p><span class="institut-name">Beauté Divine</span><br> 5 Place de l'église, Aubigny<br>85430 Aubigny-Les Clouzeaux</p>
+                </div>
+                <div class="time contact-full-width">
+                    <span class="icon">watch_later</span>
+                    <div>
+                        <p><span class="institut-time">Ouvert toute l'année (hors vacances scolaires) :</span>
+                            <br>Lundi : 13h - 18h<br>Mardi, jeudi, vendredi : 9h - 13h30 & 14h30 - 19h
+                            <br>Mercredi et samedi* : 9h - 13h
+                        </p>
+                        <p><span class="institut-time">Et pendant les vacances scolaires :</span>
+                            <br>Du mardi au vendredi : 9h - 13h30 & 14h30 - 19h
+                            <br>Et le samedi* : 9h - 13h
+                        </p>
+                    </div>
+                </div>
+                <div class="telephone contact-full-width">
+                    <span class="icon">settings_phone</span>
+                    <a href="tel:0251072450">02.51.07.24.50</a>
+                    <span class="icon">email</span>
+                    <a href="mailto:institutbeautedivine@outlook.com">institutbeautedivine@outlook.com</a>
+                </div>
+                <div class="social contact-full-width">
+                    <span class="icon">facebook</span>
+                    <a target="_blank" href="https://www.facebook.com/Beauté-divine-institut-115557843186591">
+            Facebook
+          </a>
+                    <span class="icon" svgIcon="insta-p" aria-hidden="false" aria-label="Instagram"></span>
+                    <a target="_blank" href="https://www.instagram.com/divineinstitutbeaute/">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

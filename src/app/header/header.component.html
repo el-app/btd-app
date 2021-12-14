@@ -1,1 +1,62 @@
-<p>header works!</p>
+<header>
+    <div class="header-top">
+        <a href="https://www.planity.com/institut-beaute-divine-85430-aubigny" target="_blank" tabindex="0">
+            Prendre RDV en ligne
+        </a>
+    </div>
+    <div class="sign">
+        <span>INSTITUT</span>
+        <img src="../../assets/img/signboard-btd.png" alt="Institut Beauté divine">
+    </div>
+
+    <nav class="header-bottom theme1 d-lg-block" aria-label="Barre de navigation">
+        <div class="container">
+            <ul id="menubar" class="menubar" role="menubar" aria-label="Menu">
+                <li routerLinkActive="active" role="none">
+                    <a routerLink="/home" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        Accueil
+                    </a>
+                </li>
+                <li routerLinkActive="active" role="none">
+                    <a routerLink="/about" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        L'institut
+                    </a>
+                </li>
+                <li routerLinkActive="active" role="none">
+                    <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        Prestations
+                    </a>
+                    <ul class="sub-menu" role="menu">
+                        <li *ngFor="let category of categories">
+                            <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
+                                {{ category.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li routerLinkActive="active" role="none">
+                    <a routerLink="/shop" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        Produits
+                    </a>
+                </li>
+                <li routerLinkActive="active" role="none">
+                    <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        Tarifs
+                    </a>
+                    <ul class="sub-menu" role="menu">
+                        <li *ngFor="let category of categories">
+                            <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
+                                {{ category.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li routerLinkActive="active" role="none">
+                    <a routerLink="/contact" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

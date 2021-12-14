@@ -1,0 +1,121 @@
+@import '../../scss/styles.scss';
+#contact-container {
+    margin: 2rem;
+    @media #{$scr-lg-xl} {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+    .contact-content {
+        display: grid;
+        color: $first-color;
+        padding: 2rem;
+        .institut-name {
+            font-family: "Julietta-Messie";
+            font-size: 2rem;
+            color: $second-color;
+        }
+        .institut-time {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: $second-color;
+        }
+    }
+}
+
+.contact-container {
+    position: relative;
+    display: grid;
+    background-color: $main-color;
+    justify-items: center;
+    padding: 1rem;
+    h2 {
+        color: $first-color;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .subtitle {
+        height: 2px;
+        width: 30%;
+        background-color: $second-color;
+    }
+    .contact-form {
+        max-width: 60%;
+        background: $main-color;
+        margin-top: 1rem;
+        .contact-form-content {
+            border: 3px solid $second-color;
+            transform: rotate(-2deg);
+            padding: rem;
+        }
+        textarea {
+            resize: none;
+            min-height: 7rem;
+            height: auto;
+        }
+        button {
+            background: $third-color;
+            color: $second-color;
+            height: 3rem;
+            border-radius: 25px;
+            width: 7rem;
+            font-size: 1.6rem;
+            font-family: Julietta-Messie;
+            display: grid;
+            place-items: center;
+        }
+    }
+    .contact-content {
+        display: grid;
+        place-items: center;
+        .content-info {
+            width: max-content;
+        }
+    }
+     ::ng-deep .contact-full-width {
+        width: 100%;
+        color: $third-color;
+        mat-label {
+            color: $main-color;
+        }
+        .mat-form-field-underline {
+            background: $main-color;
+        }
+        input::placeholder,
+        .mat-hint {
+            color: $main-color;
+        }
+        .contact-content {
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+        }
+        &.submit {
+            display: grid;
+            justify-content: center;
+            padding-top: 1rem;
+        }
+        &.address,
+        &.time,
+        &.telephone,
+        &.social {
+            display: flex;
+            flex-direction: row;
+            color: $main-color;
+            font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding: 2rem 0 0 7rem;
+            mat-icon {
+                color: $second-color;
+            }
+            p,
+            a {
+                margin: 0 1rem 1rem 1rem;
+                text-decoration: none;
+                color: $first-color;
+            }
+            textarea {
+                min-height: 5rem;
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { ShopComponent } from './shop/shop.component';
 import { ProductsComponent } from './shop/products/products.component';
 import { ProductComponent } from './shop/product/product.component';
 import { CartComponent } from './shop/cart/cart.component';
+import { NoPagesLandComponent } from './no-pages-land/no-pages-land.component';
+import { AboutComponent } from './about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,11 +30,14 @@ import { CartComponent } from './shop/cart/cart.component';
     ShopComponent,
     ProductsComponent,
     ProductComponent,
-    CartComponent
+    CartComponent, 
+    NoPagesLandComponent, AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
