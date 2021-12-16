@@ -1,0 +1,68 @@
+@import "../../../scss/styles.scss";
+.el-tab-panel {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    transition: opacity .15s linear;
+    .product-card {
+        background-color: $first-color;
+        margin: 1rem;
+        @media #{$scr-lg-xl} {
+            width: 22vw;
+        }
+        @media #{$scr-sm-md} {
+            width: 32vw;
+        }
+        &-body {
+            display: grid;
+            justify-items: center;
+            padding: 1rem;
+            color: $main-color;
+            img {
+                width: 100%;
+                background-color: #fff;
+            }
+            .product-thumbnail {
+                border: 1px solid $second-color;
+            }
+            .product-description {
+                width: 100%;
+                max-height: 11vw;
+                h3,
+                h5 {
+                    margin: 0;
+                }
+                .title {
+                    color: $main-color;
+                }
+                .sub-title {
+                    margin: -.8rem 0 0;
+                    font-size: .75rem;
+                }
+                .purchase {
+                    display: flex;
+                    justify-content: space-between;
+                    button {
+                        background-color: $second-color;
+                        padding: .5rem .6rem;
+                        border-radius: 2rem;
+                        border: 0;
+                        height: max-content;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ion {
+    font-family: "Ionicons";
+    color: $main-color;
+    &-ios-star::before {
+        content: '\f4b3';
+    }
+    &-bag::before {
+        content: '\f292';
+    }
+}

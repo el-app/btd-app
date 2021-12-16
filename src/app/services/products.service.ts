@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Product } from '../model/Product';
 import { Result } from '../model/result';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Result } from '../model/result';
 })
 export class ProductsService {
 
-  products = [];
+  products: Product[] = [];
   prodSubject = new Subject<any[]>();
 
   constructor(private http: HttpClient) {
@@ -24,7 +25,7 @@ export class ProductsService {
     const url = `${environment.API+'products?'+environment.API_KEY}`;
 
     this.http.get<any>(url).subscribe(
-      (dataProducts) => {
+      (dataProducts: Result) => {
         if (dataProducts.status == 200) {
           this.products = dataProducts.result;
           this.emitProducts();

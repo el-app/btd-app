@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Product } from '../model/Product';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -9,14 +10,14 @@ import { ProductsService } from '../services/products.service';
 })
 export class ShopComponent implements OnInit {
 
-  products: Array<string> = [];
+  products = [];
   prodSubscription: Subscription = new Subscription;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private prodService: ProductsService) { }
 
   ngOnInit(): void {
-    this.prodSubscription = this.productsService.prodSubject.subscribe(
-      (data) => {
+    this.prodSubscription = this.prodService.prodSubject.subscribe(
+      (data: any) => {
         this.products = data;
       }
     )

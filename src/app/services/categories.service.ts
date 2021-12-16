@@ -2,16 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Categories } from '../model/categories';
-import { Result } from '../model/result';
+import { Category } from '../model/Category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesService {
 
-  categories: Categories[] = [];
-  categoriesSubject = new Subject<Categories[]>();
+  categories: Category[] = [];
+  categoriesSubject = new Subject<Category[]>();
 
   constructor(private http: HttpClient) {
     this.getCategoriesFromServer();
@@ -20,7 +19,7 @@ export class CategoriesService {
   getCategoriesFromServer(): void{
     const url = `${environment.API + 'categories?' + environment.API_KEY}`;
     this.http.get<any>(url).subscribe(
-      (response: Result) => {
+      (response: any) => {
         if (response.status == 200) {
           //this.categories = response.result;
           this.emitCategories();

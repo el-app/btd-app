@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Categories } from '../model/categories';
+import { Category } from '../model/Category';
 import { CategoriesService } from '../services/categories.service';
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { CategoriesService } from '../services/categories.service';
 })
 export class HeaderComponent implements OnInit {
 
-  categories: Categories[] = [];
+  categories: Category[] = [];
   categoriesSub: Subscription = new Subscription;
 
   constructor(
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoriesSub = this.categoriesService.categoriesSubject.subscribe(
-      (data: Categories[])=>{
+      (data: Category[])=>{
         this.categories = data;
       }
     );

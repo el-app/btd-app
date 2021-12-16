@@ -21,22 +21,30 @@
     position: relative;
     display: grid;
     align-items: center;
-    height: auto;
-    width: 100vw;
+    height: 12%;
+    width: 100%;
     img {
         width: 100%;
         height: auto;
     }
     span {
         position: absolute;
-        left: -2.5rem;
-        top: 7rem;
-        padding: 9px 10px 9px 15px;
-        font-size: 30px;
-        letter-spacing: 8px;
+        left: -2%;
         transform: rotate(-90deg);
         border-top: 2px solid $second-color;
         border-bottom: 2px solid $second-color;
+        padding: 0 .3rem 0 .4rem;
+        font-size: 0.6rem;
+        letter-spacing: .3rem;
+        @media #{$scr-lg-xl} {
+            left: -3rem;
+            padding: .2rem .2rem .2rem .5rem;
+            font-size: 1.8rem;
+            letter-spacing: .5rem;
+        }
+        @media #{$scr-sm-md} {
+            max-width: 100%;
+        }
     }
 }
 
@@ -46,6 +54,7 @@ nav {
 
 ul.menubar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-transform: uppercase;
     color: $main-color;
@@ -54,11 +63,11 @@ ul.menubar {
         padding: .5rem;
         font-size: 1.2rem;
         &.active>a {
-            color: cadetblue;
-            border-bottom: 2px solid cadetblue;
+            color: $third-color-light;
+            border-bottom: 2px solid $third-color-light;
         }
-        &:hover>a,
-        &:focus>a {
+        &:not(.active)>a:hover,
+        &:not(.active)>a:focus {
             color: $second-color;
             border-bottom: 2px solid $second-color;
         }
