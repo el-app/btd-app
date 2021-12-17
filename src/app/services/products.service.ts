@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../model/Product';
-import { Result } from '../model/result';
+import { Result } from '../model/Result';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,8 @@ export class ProductsService {
 
   products: Product[] = [];
   prodSubject = new Subject<any[]>();
+  //urlImgRoot = "https://api.elapp.fr/images/products/";
+  urlImgRoot: string = "http://localhost:8888/el-btd-app/backend/images/products/";
 
   constructor(private http: HttpClient) {
     this.getProductsFromServer();
@@ -28,9 +30,13 @@ export class ProductsService {
       (dataProducts: Result) => {
         if (dataProducts.status == 200) {
           this.products = dataProducts.result;
+          this.products.forEach((product) => {
+            const imgRequest = new Request(this.urlImgRoot+product.image);
+            fetch(imgRequest).then().catch(()=> {
+              product.image = "btd.png";
+            });
+          })
           this.emitProducts();
-        } else {
-          console.log("Erreur : "+dataProducts.message);
         }
       }
     )

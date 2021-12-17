@@ -7,27 +7,48 @@
     .product-card {
         background-color: $first-color;
         margin: 1rem;
+        height: auto;
+        width: 70%;
         @media #{$scr-lg-xl} {
-            width: 22vw;
+            width: 22%;
         }
         @media #{$scr-sm-md} {
-            width: 32vw;
+            width: 34%;
         }
         &-body {
             display: grid;
             justify-items: center;
             padding: 1rem;
             color: $main-color;
-            img {
-                width: 100%;
-                background-color: #fff;
-            }
             .product-thumbnail {
                 border: 1px solid $second-color;
+                @media #{$scr-lg-xl} {
+                    height: 18rem;
+                }
+                @media #{$scr-sm-md} {
+                    height: 14rem;
+                }
+                img {
+                    background-color: #fff;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: transform .2s ease;
+                }
             }
             .product-description {
+                display: grid;
+                grid-template-rows: 2rem 1rem 1rem 2rem;
+                justify-self: left;
+                height: 100%;
                 width: 100%;
-                max-height: 11vw;
+                @media #{$scr-lg-xl} {
+                    max-height: 7rem;
+                }
+                @media #{$scr-sm-md} {
+                    max-height: 6rem;
+                }
                 h3,
                 h5 {
                     margin: 0;
@@ -35,9 +56,13 @@
                 .title {
                     color: $main-color;
                 }
-                .sub-title {
+                .brand,
+                .color {
                     margin: -.8rem 0 0;
                     font-size: .75rem;
+                }
+                .star-rating {
+                    line-height: 1rem;
                 }
                 .purchase {
                     display: flex;

@@ -10,7 +10,7 @@ import { ProductsService } from '../services/products.service';
 })
 export class ShopComponent implements OnInit {
 
-  products = [];
+  products: Product[] = [];
   prodSubscription: Subscription = new Subscription;
 
   constructor(private prodService: ProductsService) { }
