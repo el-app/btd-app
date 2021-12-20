@@ -175,6 +175,9 @@ svg {
     background: transparent;
     clip-path: circle(25px at calc(100% - 45px) 45px);
     transition: all 0.3s ease-in-out;
+    @media #{$scr-not-xs} {
+        display: none;
+    }
     .active~& {
         clip-path: circle(75%);
         background: $third-color;
@@ -200,24 +203,6 @@ svg {
                 &:focus {
                     border: 1px solid $second-color;
                     border-radius: 2rem;
-                }
-                &:after {
-                    position: absolute;
-                    content: "";
-                    background: #fff;
-                    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
-                    width: 104%;
-                    height: 110%;
-                    left: -2%;
-                    top: -5%;
-                    border-radius: 50px;
-                    transform: scaleY(0);
-                    z-index: -1;
-                    animation: rotate 1.5s linear infinite;
-                    transition: transform 0.3s ease;
-                }
-                &:hover:after {
-                    transform: scaleY(1);
                 }
             }
         }

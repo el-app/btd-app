@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   categories: Category[] = [];
   categoriesSub: Subscription = new Subscription;
-  active: string = "";
+  isOpen: boolean = false;
 
   constructor(
     private categoriesService: CategoriesService) { }
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openCloseNav() {
-    this.active = !this.active ? "active" : "";
+    this.isOpen = this.isOpen ? false : true;
   }
 
 }

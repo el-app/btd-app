@@ -9,7 +9,7 @@
         <img src="../../assets/img/signboard-btd.png" alt="Institut Beauté divine">
     </div>
 
-    <nav aria-label="Barre de navigation" [ngClass]="active" (click)="openCloseNav()">
+    <nav aria-label="Barre de navigation" [class.active]="isOpen" (click)="openCloseNav()">
         <div class="menu-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 200 200">
                 <g stroke-width="6.5" stroke-linecap="round">
