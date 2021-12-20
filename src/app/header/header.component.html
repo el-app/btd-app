@@ -9,54 +9,112 @@
         <img src="../../assets/img/signboard-btd.png" alt="Institut Beauté divine">
     </div>
 
-    <nav class="header-bottom theme1 d-lg-block" aria-label="Barre de navigation">
-        <div class="container">
-            <ul id="menubar" class="menubar" role="menubar" aria-label="Menu">
-                <li routerLinkActive="active" role="none">
-                    <a routerLink="/home" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        Accueil
-                    </a>
-                </li>
-                <li routerLinkActive="active" role="none">
-                    <a routerLink="/about" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        L'institut
-                    </a>
-                </li>
-                <li routerLinkActive="active" role="none">
-                    <a routerLink="/categories" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        Prestations
-                    </a>
-                    <ul class="sub-menu" role="menu">
-                        <li *ngFor="let category of categories">
-                            <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
-                                {{ category.name }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li routerLinkActive="active" role="none">
-                    <a routerLink="/shop" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        Produits
-                    </a>
-                </li>
-                <li routerLinkActive="active" role="none">
-                    <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        Tarifs
-                    </a>
-                    <ul class="sub-menu" role="menu">
-                        <li *ngFor="let category of categories">
-                            <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
-                                {{ category.name }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li routerLinkActive="active" role="none">
-                    <a routerLink="/contact" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                        Contact
-                    </a>
-                </li>
-            </ul>
+    <nav aria-label="Barre de navigation" [ngClass]="active" (click)="openCloseNav()">
+        <div class="menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 200 200">
+                <g stroke-width="6.5" stroke-linecap="round">
+                    <path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#e4beac" />
+                    <path d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554" fill="none" stroke="#fff" />
+                    <path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#e4beac" />
+                    <path d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554" fill="none" stroke="#fff" />
+                    <path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#e4beac" />
+                    <path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#e4beac" />
+                </g>
+            </svg>
         </div>
+        <ul id="menubar" class="menubar" role="menubar" aria-label="Menu">
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/home" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    Accueil
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/about" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    L'institut
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/categories" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    Prestations
+                </a>
+                <ul class="sub-menu" role="menu">
+                    <li *ngFor="let category of categories">
+                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/shop" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    Produits
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    Tarifs
+                </a>
+                <ul class="sub-menu" role="menu">
+                    <li *ngFor="let category of categories">
+                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/contact" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    Contact
+                </a>
+            </li>
+        </ul>
     </nav>
+    <div class="wrapper">
+        <ul role="menubar" aria-label="Menu">
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/home" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    Accueil
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/about" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    L'institut
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/categories" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    Prestations
+                </a>
+                <ul class="sub-menu" role="menu">
+                    <li *ngFor="let category of categories">
+                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1" (click)="openCloseNav()">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/shop" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    Produits
+                </a>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    Tarifs
+                </a>
+                <ul class="sub-menu" role="menu">
+                    <li *ngFor="let category of categories">
+                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="0" (click)="openCloseNav()">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLinkActive="active" role="none">
+                <a routerLink="/contact" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>

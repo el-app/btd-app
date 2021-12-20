@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   categories: Category[] = [];
   categoriesSub: Subscription = new Subscription;
+  active: string = "";
 
   constructor(
     private categoriesService: CategoriesService) { }
@@ -22,6 +23,10 @@ export class HeaderComponent implements OnInit {
       }
     );
     this.categoriesService.emitCategories();
+  }
+
+  openCloseNav() {
+    this.active = !this.active ? "active" : "";
   }
 
 }
