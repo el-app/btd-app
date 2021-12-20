@@ -13,11 +13,12 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductsComponent } from './shop/products/products.component';
 import { ProductComponent } from './shop/product/product.component';
+import { CategoriesComponent } from './shop/categories/categories.component';
+import { CategoryComponent } from './shop/category/category.component';
 import { CartComponent } from './shop/cart/cart.component';
 import { NoPagesLandComponent } from './no-pages-land/no-pages-land.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +31,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShopComponent,
     ProductsComponent,
     ProductComponent,
+    CategoriesComponent,
+    CategoryComponent,
     CartComponent, 
-    NoPagesLandComponent, AboutComponent
+    NoPagesLandComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

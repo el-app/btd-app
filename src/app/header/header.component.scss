@@ -1,4 +1,10 @@
 @import '../../scss/styles.scss';
+header {
+    @media #{$scr-xs} {
+        height: 17vh;
+    }
+}
+
 .header-top {
     z-index: 5;
     display: flex;
@@ -165,44 +171,61 @@ svg {
     }
 }
 
-.wrapper {
-    position: fixed;
-    top: 10vw;
-    top: 12vw;
-    right: -19vw;
-    height: 46vh;
-    border-radius: 50%;
-    background: transparent;
-    clip-path: circle(25px at calc(100% - 45px) 45px);
-    transition: all 0.3s ease-in-out;
-    @media #{$scr-not-xs} {
-        display: none;
-    }
+.wrap-container {
     .active~& {
-        clip-path: circle(75%);
-        background: $third-color;
-    }
-    ul {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: auto;
-        padding: 0;
-        transform: translate(-50%, -50%);
-        list-style: none;
-        text-align: center;
-        li {
-            margin: 1rem;
-            a {
-                position: relative;
-                text-decoration: none;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(17, 33, 48, .7);
+        @media #{$scr-not-xs} {
+            display: none;
+        }
+    }
+    .wrapper {
+        position: fixed;
+        top: 5vh;
+        right: -21vw;
+        height: 50%;
+        width: 110%;
+        border-radius: 50%;
+        background: $third-color;
+        clip-path: circle(25px at calc(100% - 45px) 45px);
+        transition: all 0.3s ease-in-out;
+        .active~& {
+            clip-path: circle(75%);
+            background: $third-color;
+            @media #{$scr-not-xs} {
+                display: none;
+            }
+        }
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: auto;
+            padding: 0;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            text-align: center;
+            li {
+                margin: 1rem;
                 font-size: 1.3rem;
-                padding: .3rem 1rem;
                 transition: all 0.3s ease;
-                &:hover,
-                &:focus {
-                    border: 1px solid $second-color;
+                &.active>a {
+                    border: 2px solid $second-color;
                     border-radius: 2rem;
+                    padding: .3rem 1rem;
+                    text-transform: uppercase;
+                    letter-spacing: .1rem;
+                }
+                &:not(.active)>a:hover,
+                &:not(.active)>a:focus {
+                    color: $second-color;
+                    border-bottom: 1px solid $second-color;
+                    text-transform: uppercase;
+                    letter-spacing: .1rem;
                 }
             }
         }

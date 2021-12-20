@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NoPagesLandComponent } from './no-pages-land/no-pages-land.component';
 import { CartComponent } from './shop/cart/cart.component';
+import { CategoriesComponent } from './shop/categories/categories.component';
 import { ProductComponent } from './shop/product/product.component';
 import { ShopComponent } from './shop/shop.component';
 
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
   {path:'shop', component: ShopComponent},
+  {path:'products', component: ProductComponent},
+  {path:'categories', component: CategoriesComponent},
   {path:'cart', component: CartComponent},
   {path:'product/:id', component: ProductComponent},
   {path:'contact', component: ContactComponent},
