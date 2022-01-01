@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-  
+
   products: Product[] = [];
   prodSubscription: Subscription = new Subscription;
   urlImgRoot: string = "";

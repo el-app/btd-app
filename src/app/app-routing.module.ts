@@ -9,6 +9,7 @@ import { NoPagesLandComponent } from './no-pages-land/no-pages-land.component';
 import { CartComponent } from './shop/cart/cart.component';
 import { CategoriesComponent } from './shop/categories/categories.component';
 import { ProductComponent } from './shop/product/product.component';
+import { ProductsComponent } from './shop/products/products.component';
 import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'about', component: AboutComponent},
   {path:'shop', component: ShopComponent},
-  {path:'products', component: ProductComponent},
+  {path:'products', component: ProductsComponent},
   {path:'categories', component: CategoriesComponent},
   {path:'cart', component: CartComponent},
   {path:'product/:id', component: ProductComponent},

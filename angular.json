@@ -23,7 +23,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/btd-app",
+                        "outputPath": "dist/btd.elapp.fr",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -55,6 +55,12 @@
                                 "replace": "src/environments/environment.ts",
                                 "with": "src/environments/environment.prod.ts"
                             }],
+                            "buildOptimizer": true,
+                            "optimization": true,
+                            "vendorChunk": false,
+                            "extractLicenses": true,
+                            "sourceMap": false,
+                            "namedChunks": false,
                             "outputHashing": "all"
                         },
                         "development": {
@@ -66,19 +72,14 @@
                             "namedChunks": true
                         }
                     },
-                    "defaultConfiguration": "production"
+                    "defaultConfiguration": "development"
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "btd-app:build:production"
-                        },
-                        "development": {
-                            "browserTarget": "btd-app:build:development"
-                        }
-                    },
-                    "defaultConfiguration": "development"
+                    "options": {
+                        "browserTarget": "btd-app:build",
+                        "proxyConfig": "src/proxy.conf.json"
+                    }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",

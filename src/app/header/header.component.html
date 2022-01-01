@@ -37,13 +37,15 @@
                 <a routerLink="/categories" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
                     Prestations
                 </a>
+                <!--
                 <ul class="sub-menu" role="menu">
                     <li *ngFor="let category of categories">
-                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
+                        <a [routerLink]="['/categories', category.idCategory]" role="menuitem" tabindex="-1">
                             {{ category.name }}
                         </a>
                     </li>
                 </ul>
+                -->
             </li>
             <li routerLinkActive="active" role="none">
                 <a routerLink="/products" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -54,13 +56,6 @@
                 <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
                     Tarifs
                 </a>
-                <ul class="sub-menu" role="menu">
-                    <li *ngFor="let category of categories">
-                        <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1">
-                            {{ category.name }}
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li routerLinkActive="active" role="none">
                 <a routerLink="/contact" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -86,6 +81,7 @@
                     <a routerLink="/categories" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
                         Prestations
                     </a>
+                    <!--
                     <ul class="sub-menu" role="menu">
                         <li *ngFor="let category of categories">
                             <a [routerLink]="['/categories',category.idCategory]" role="menuitem" tabindex="-1" (click)="openCloseNav()">
@@ -93,9 +89,10 @@
                             </a>
                         </li>
                     </ul>
+                    -->
                 </li>
                 <li routerLinkActive="active" role="none">
-                    <a routerLink="/shop" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
+                    <a routerLink="/products" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" (click)="openCloseNav()">
                         Produits
                     </a>
                 </li>

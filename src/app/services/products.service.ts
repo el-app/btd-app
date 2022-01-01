@@ -13,7 +13,7 @@ export class ProductsService {
   products: Product[] = [];
   prodSubject = new Subject<any[]>();
   //urlImgRoot = "https://api.elapp.fr/images/products/";
-  urlImgRoot: string = "http://localhost:8888/el-btd-app/backend/images/products/";
+  urlImgRoot: string = "http://localhost:8888/el-btd-app/btd-backend/images/products/";
 
   constructor(private http: HttpClient) {
     this.getProductsFromServer();
@@ -35,7 +35,7 @@ export class ProductsService {
             fetch(imgRequest).then().catch(()=> {
               product.image = "btd.png";
             });
-          })
+          });
           this.emitProducts();
         }
       }
